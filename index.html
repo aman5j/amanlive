@@ -1,0 +1,608 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Slider Tasks</title>
+    <link rel="stylesheet" href="css/slick-theme.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+      body {
+        width: 100%;
+        float: left;
+        padding: 0;
+        margin: 0;
+        background-color: rgb(70, 103, 252);
+
+        /* align-items: center; */
+      }
+
+      .task1 {
+        width: 100%;
+        float: left;
+        height: 400px;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      /* .task1 {
+        width: 900px;
+        height: 400px;
+        background-color: #fff;
+        text-align: center;
+      } */
+
+      .content {
+        width: 250px;
+        height: auto;
+        background-color: #fff;
+        color: black;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px gray;
+        margin: 5px 10px;
+      }
+
+      .content-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .name {
+        color: blue;
+      }
+
+      .task1-slider .slick-dots li {
+        width: 15px;
+        height: 15px;
+        border: 1px solid blue;
+        border-radius: 50%;
+      }
+
+      .task1-slider .slick-dots li.slick-active {
+        background-color: rgb(73, 13, 212);
+      }
+
+      .task1-slider .slick-prev {
+        width: 40px;
+        height: 40px;
+        z-index: 9;
+        background: rgb(24, 22, 22) !important;
+        border-radius: 10px;
+        left: 35px;
+      }
+
+      .task1-slider .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 9;
+        background: rgb(24, 22, 22) !important;
+        border-radius: 10px;
+        right: 35px;
+      }
+
+      .task1-slider .slick-prev:before {
+        content: "\f104";
+        font-family: fontawesome;
+      }
+
+      .task1-slider .slick-next:before {
+        content: "\f105";
+        font-family: fontawesome;
+      }
+
+      .task1-slider .slick-slide {
+        opacity: 0.5;
+      }
+      .task1-slider .slick-center {
+        opacity: 1;
+      }
+
+      .task2 {
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+      }
+
+      .task2-slider .slick-dots li {
+        width: 70px;
+        height: 2px;
+        background-color: rgb(73, 13, 212);
+        position: relative;
+      }
+
+      
+
+       .task2-slider .slick-dots li.slick-active:after {
+        animation-name: makeSlideWhite;
+        animation-duration: 2300ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+
+
+      @keyframes makeSlideWhite {
+       0% {width: 0px;}
+       100% {width:100%;}
+      }
+
+
+      .task2-slider .slick-dots li:after{
+        width: 0%;
+        height: 100%;
+        background-color: red;
+        content: "";
+        top: 0;
+        display: inline-block;
+        left: 0;
+        position: absolute;
+        
+      }
+
+
+      .task3 {
+        width: 100%;
+        float: left;
+        margin-top: 100px;
+      }
+
+      .task3-content {
+        width: 100%;
+        position: relative;
+      }
+
+      .task3-content img {
+        width: 100%;
+      }
+
+      .task3-slider .slick-prev {
+        width: 40px;
+        height: 40px;
+        z-index: 9;
+        background: #fff !important;
+        border-radius: 50%;
+        left: 35px;
+      }
+
+      .task3-slider .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 9;
+        background: #fff !important;
+        border-radius: 50%;
+        right: 35px;
+      }
+
+       .task3-slider .slick-prev:before {
+        content: "\f104";
+        font-family: fontawesome;
+        color: black;
+      }
+
+      .task3-slider .slick-next:before {
+        content: "\f105";
+        font-family: fontawesome;
+        color: black;
+      }
+
+      .task3-content1 {
+        position: absolute;
+        top: 20px;
+        left: 100px;
+
+      }
+
+      .content-description {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .content-discount {
+        background-color: rgb(69, 243, 69);
+        border-radius: 20px;
+        padding: 5px;
+      }
+
+      .title {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      .content-text {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+
+      .price-text {
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .price {
+        color: red;
+        font-size: 32px;
+        font-width: 500;
+        margin-left: 10px;
+      }
+
+      .task3-btn {
+        background-color: blue;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 20px;
+        margin-top: 20px;
+      }
+
+      .model-user {
+        position: fixed;
+        top: 8%;
+        left: 25%;
+        width: 700px;
+        float: left;
+        margin-top: 100px;
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        /* display: none; */
+        z-index: 11;
+        transform: translateY(-200%);
+        transition: all 0.5s ease-in-out;
+      }
+
+      .close-icon {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .show-Model {
+        display: block;
+
+       transform: translateY(0);
+       transition: all 0.5s ease-in-out ;
+    
+        
+      }
+
+      /* @keyframes showModelAnimation {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      } */
+
+      .hide-Model {
+        display: none;
+
+        animation-name: hideModelAnimation;
+        animation-timing-function: linear;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+
+      @keyframes hideModelAnimation {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(900px);
+        }
+      }
+
+      .back-drop { 
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.637);
+        /* opacity: 0.5; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+      }
+
+      .back-drop-show {
+        display: block;
+      }
+
+       .back-drop-hide {
+        display: none;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+
+   <button class="show">show</button>
+    <button class="hide">hide</button>
+
+    <button class="model-open-toggle">Model For User Details</button>
+    
+    <p class="meratext " style="width: 100%; float: left; color: white; padding: 20px; margin-top: 20px;">
+      This is a simple paragraph for demonstration purposes. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, temporibus sequi nulla tempora necessitatibus, eaque assumenda quibusdam totam sapiente doloribus laborum possimus laudantium molestiae nesciunt quas velit rerum recusandae tempore officia, cum quod aperiam? Quibusdam quasi doloribus accusamus maiores aspernatur adipisci consequuntur tenetur, porro consequatur ducimus cum? Quidem exercitationem, laboriosam fugit, consequatur itaque quasi aperiam assumenda necessitatibus cumque magni consectetur illo quos praesentium similique sunt nobis ab. Cupiditate facilis nihil accusantium alias culpa et amet architecto? Doloremque exercitationem quaerat architecto recusandae illum pariatur necessitatibus vel voluptates! Expedita, est quas aut dignissimos cumque harum numquam sit, quod labore, quae aliquid! Quia ea repudiandae accusamus animi quidem. Sapiente nemo non exercitationem expedita adipisci suscipit illo maiores asperiores dolores modi aspernatur vitae et, dolorem corrupti minima provident iusto repellat facilis necessitatibus unde ducimus, nihil optio! Vel, modi. Hic consequuntur doloremque nostrum nesciunt ipsam voluptas aperiam qui dicta facere quis corporis iste nam beatae praesentium aspernatur iusto enim quo voluptatibus sed error animi, nulla reprehenderit velit at? Maiores, nihil reiciendis eum modi quis voluptates! Similique commodi eum veritatis quidem reprehenderit? Natus accusantium cumque ab facilis qui numquam distinctio obcaecati molestiae, unde voluptates voluptate hic dignissimos eveniet molestias illo tempore velit veritatis eius modi itaque quae! Sed, soluta velit, repellat deserunt, voluptas mollitia suscipit nemo animi molestias nobis officia vitae. Dolore saepe ex quo totam corrupti quis nemo inventore deserunt iure laboriosam recusandae fugit numquam architecto, at dolores, doloribus voluptatum vel esse praesentium blanditiis a? Qui, est nisi adipisci, harum aut similique accusantium odio culpa autem reprehenderit deleniti incidunt et. Et, obcaecati alias. Id molestiae eaque iusto perspiciatis necessitatibus consequuntur dolore beatae nesciunt sint, voluptas minima dolorem optio odit praesentium sed repellendus nobis ab velit? Quidem, nobis. Distinctio cum error dolore. Aliquid mollitia autem ipsum qui deserunt odio voluptatem, laboriosam illum aperiam consequatur sunt? Iste minus dolorum corrupti eveniet facere! Ea eveniet nam explicabo quidem quod tenetur beatae deserunt ut, eum ullam quam nisi, consequatur nulla laboriosam minima doloremque, soluta eligendi quos dolorem facere earum sequi. Sed, officiis impedit veritatis nemo aut velit voluptatem eaque nobis facere sit quisquam quos ullam deserunt? Sequi aperiam eaque adipisci? Libero, delectus labore, porro dolor nesciunt ratione voluptatum illum obcaecati doloremque quis a facere nemo omnis voluptate corporis qui quod eveniet sequi? Tenetur laborum ipsa repellendus veniam quidem exercitationem iusto recusandae saepe sequi temporibus, facilis impedit animi, architecto aliquam provident tempore, ratione perferendis numquam deserunt minima consequuntur! Atque velit eum reiciendis, nemo nulla porro corporis possimus excepturi architecto quisquam dolore? Qui quod autem atque doloribus, fuga necessitatibus blanditiis. Nostrum, a ab obcaecati fugiat laborum temporibus ea minima quisquam recusandae delectus soluta modi, amet dicta dolor laboriosam at perspiciatis officia magni ad facilis! Tempore iste consectetur libero reprehenderit ducimus corrupti doloremque, maxime fugiat nesciunt assumenda voluptates pariatur! Sint earum similique dicta corrupti nemo sapiente cumque perspiciatis aspernatur, culpa doloremque pariatur fuga. Et, ex exercitationem vero illum possimus cumque unde officiis quos voluptatum illo quasi fuga reprehenderit quia ad odio nam nulla, repellendus consequatur eum laborum repellat adipisci! Commodi consectetur nesciunt laboriosam iusto nisi ullam perspiciatis id dolorum sed adipisci ipsa alias vitae animi, recusandae aspernatur fugiat! Voluptatem dolore perspiciatis minima. Vitae alias cupiditate, iusto non soluta ea minima nostrum accusamus totam quia, ipsum ducimus dolorem repellat porro libero optio commodi quae iste veniam mollitia. Molestiae inventore fuga placeat voluptate necessitatibus ducimus quos dolores iure eligendi. Omnis quae quo esse dolore temporibus autem inventore aliquid velit quia veniam alias nihil officiis nam officia neque, iure earum blanditiis recusandae, debitis ipsum? Neque quis omnis, quod accusamus expedita ratione fugiat ut dolorum reprehenderit laborum aliquam nihil, quaerat quae nisi quam fugit! Nostrum esse expedita velit beatae labore ipsa delectus? Nobis doloremque delectus deserunt tempore totam recusandae impedit unde blanditiis aperiam non quia culpa quisquam, illo debitis veritatis cum. Tempora eos porro veniam, at maxime recusandae deserunt provident rerum voluptate non tenetur nesciunt voluptatem placeat nisi similique, iure ea eligendi esse! Pariatur quidem cum dignissimos magnam accusantium eum nobis reiciendis, sed voluptate laboriosam provident facilis, similique fugiat totam officiis suscipit ducimus placeat asperiores ipsam voluptates officia porro eaque culpa! Architecto numquam eum fugiat ut odio nemo reprehenderit omnis dolorum voluptas asperiores. Aliquid ratione quam iste placeat dolor excepturi eveniet non iure optio. Assumenda culpa nulla possimus odit vero repudiandae autem, iste libero dolorem, a fugiat dolore atque rerum necessitatibus cupiditate nesciunt aperiam asperiores ullam reprehenderit aspernatur? Ipsa eaque deleniti fuga ad velit at? Aut adipisci consequatur ea illo alias est accusamus placeat expedita. Architecto, libero aliquid ad nesciunt similique exercitationem incidunt dolorem consequuntur perspiciatis nam quae sint molestias necessitatibus expedita totam recusandae fuga inventore! Tempore delectus quisquam distinctio ratione iste soluta culpa in officiis voluptatum vero voluptatibus accusantium, odio, earum exercitationem eligendi laborum! Maxime assumenda numquam beatae quis illum nihil cupiditate rem laudantium explicabo obcaecati. Perferendis reiciendis magni expedita nihil cumque sunt nam, velit error. Modi perferendis cumque officia iure soluta, ullam consequatur qui sapiente suscipit labore rem eveniet enim nihil ipsam ducimus distinctio dolorem assumenda iste dolorum et nisi veniam expedita. Ea odit voluptatem quos corporis natus suscipit nam beatae. Aliquam, quod magni voluptas voluptatibus vero provident illo fuga molestias odio quos assumenda ipsa eius explicabo laboriosam, numquam perspiciatis a est. Fuga obcaecati, alias saepe corrupti dicta nihil ut dolorem! Sed, ea deserunt ullam itaque vero, magni cumque, atque veniam magnam nostrum consequuntur? Architecto beatae commodi fugit debitis autem ut quam vel nisi dignissimos facere sequi saepe voluptas, velit libero eaque vitae deleniti sapiente quos harum! Rem, quibusdam odio. Repudiandae eveniet aliquam similique minus, dolore est commodi veritatis, nisi, odio sit eos voluptate dolor. Optio libero perferendis maiores neque provident nisi? Autem laboriosam eius quae voluptates aut non vitae sunt quasi delectus animi, vero recusandae blanditiis omnis reiciendis fuga ut eligendi. Quas tempora delectus placeat sunt corporis. Totam quam voluptatem modi placeat atque autem aut quaerat quidem dolores, numquam error perspiciatis, distinctio neque ex! Incidunt repellendus ipsum totam eligendi laborum atque ratione perferendis sapiente eaque natus, facere odio animi modi dicta beatae ab rerum blanditiis, minus expedita. Deserunt tempore nemo numquam aperiam iusto.
+    </p>
+
+    <div class="toggle-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sequi sapiente temporibus unde officia doloribus, dicta in dignissimos quo nisi itaque sed eveniet. Sit alias ex maiores fugit? Placeat voluptatem eius asperiores, non ratione odio? At nulla possimus temporibus quaerat exercitationem ex hic fuga porro, velit esse. Tenetur quo ipsa quos ex possimus natus quis?</div>
+
+    <div class="task1">
+      <h3>Testimonial Carousel - Cards Comments</h3>
+      <div class="task1-slider">
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+        <div class="content">
+          <img class="content-img" src="../images/banner2.webp" alt="image" />
+          <h2 class="name">Hanna Lisem</h2>
+          <h2 class="position">Project Manager</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 2 -->
+    <div class="task2">
+      <div class="task2-slider">
+        <div>
+          <img
+            src="https://picsum.photos/300/200?random=1"
+            alt="Sample Image 1"
+          />
+        </div>
+        <div>
+          <img
+            src="https://picsum.photos/300/200?random=2"
+            alt="Sample Image 2"
+          />
+        </div>
+        <div>
+          <img
+            src="https://picsum.photos/300/200?random=3"
+            alt="Sample Image 3"
+          />
+        </div>
+        <!-- <div>
+          <img
+            src="https://picsum.photos/300/200?random=4"
+            alt="Sample Image 4"
+          />
+        </div>
+        <div>
+          <img
+            src="https://picsum.photos/300/200?random=5"
+            alt="Sample Image 5"
+          />
+        </div>
+        <div>
+          <img
+            src="https://picsum.photos/300/200?random=6"
+            alt="Sample Image 6"
+          />
+        </div> -->
+      </div>
+    </div>
+
+
+    <div class="task3">
+        <div class="task3-slider">
+            <div class="task3-content">
+                <img src="images/task3-slide1.jpg" alt="">
+                <div class="task3-content1">
+                    <p class="content-description">Exclusive offer <span class="content-discount">-20% off</span></p>
+                    <h2 class="title">A Different kind of grocery store.</h2>
+                    <p class="content-text">Only this week, don't miss...</p>
+                    <p><span class="price-text">from </span><span class="price">$7.99</span></p>
+                    <button class="task3-btn">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="task3-content">
+              <img src="images/task3-slide2.jpg" alt="">
+               <div class="task3-content1">
+                    <p class="content-description">Exclusive offer <span class="content-discount">-20% off</span></p>
+                    <h2 class="title">Quality Freshness Gauranteed!</h2>
+                    <p class="content-text">Only this week, don't miss...</p>
+                    <p><span class="price-text">from </span><span class="price">$14.35</span></p>
+                    <button class="task3-btn">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="model-user">
+          <div class="text-right"><i class="fa fa-times close-icon" aria-hidden="true"></i></div> 
+          <h1 class="my-3 fs-4">Model Title</h1>
+          <hr class="my-3">
+          <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel cumque ad, debitis quae quod veritatis quos quasi sit nulla?
+          </p>
+          <hr class="my-3">
+          <div class="model-footer text-right my-3">
+            <button class="btn btn-primary btn-close display-inline">Close</button>
+            <button class="btn btn-primary btn-saveChanges display-inline">Save Changes</button>
+          </div>
+    </div>
+
+    <div class="back-drop">
+
+    </div>
+
+    <style>
+      .show-text{
+        background-color: green !important  ;
+      }
+    </style>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ 
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/slick.min.js"></script>
+
+
+<script>
+  $(document).ready(function () {
+
+
+    $(".show").click(function () {
+      $(".meratext").addClass("show-text");
+    });
+
+    $(".hide").click(function () {
+      $(".meratext").removeClass("show-text");
+    });
+
+
+    // $(".model-open-toggle").click(function () {
+    //   $(".model-user").toggle();
+    // });
+
+    //  $(".close-icon").click(function () {
+    //   $(".model-user").hide();
+    //   // $(".model-user").css("display", "none");
+    // });
+
+    //  $(".btn-close").click(function () {
+    //   $(".model-user").hide();
+    //   // $(".model-user").css("display", "none");
+    // });
+
+  //    $(".btn-saveChanges").click(function () {
+  //     $(".model-user").hide();
+  //     // $(".model-user").css("display", "none");
+
+  // });
+
+      $(".model-open-toggle").click(function () {
+        $(".model-user").toggleClass("show-Model");
+          $(".back-drop").toggleClass("back-drop-show");
+       });
+
+       $(".close-icon").click(function () {
+      $(".model-user").removeClass("show-Model");
+      $(".back-drop").removeClass("back-drop-show");
+      
+    });
+
+        $(".btn-close").click(function () {
+      $(".model-user").removeClass("show-Model");
+      $(".back-drop").removeClass("back-drop-show");
+
+      
+    });
+
+      $(".btn-saveChanges").click(function () {
+      $(".model-user").removeClass("show-Model");
+      $(".back-drop").removeClass("back-drop-show");
+      
+    });
+
+      $(".back-drop").click(function () {
+        $(".model-user").removeClass("show-Model");
+        $(".back-drop").removeClass("back-drop-show");
+      });
+      
+
+
+
+});
+</script>
+
+
+    <script>
+      $(document).ready(function () {
+
+        $(".task1-slider").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true,
+          centerMode: true,
+        });
+
+        $(".task2-slider").slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        });
+
+        $(".task3-slider").slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        });
+      });
+
+
+    </script>
+  </body>
+</html>
